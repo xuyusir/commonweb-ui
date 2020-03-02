@@ -77,7 +77,11 @@ export default {
             .then(response => {
               console.log(response)
               if (response.data.code === 0) {
+                //store注入当前userState
+                this.$store.dispatch("setUserState",response.data)
+                //跳转主页
                 this.$router.push('/common/mainhome')
+                
               } else {
                 alert('username or password error')
               }
