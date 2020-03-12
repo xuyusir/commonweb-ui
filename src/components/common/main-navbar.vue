@@ -5,6 +5,7 @@
     </div>
       <div class="head">
         admin
+        <a href="#" @click="logout">logout</a>
       </div>
 
   </div>
@@ -13,8 +14,17 @@
 <script>
 export default {
   name: 'mainNavbar',
-  mounted:{
-    
+  methods:{
+    logout:function(){
+      this.axios.post('/apis/logout').then(response=>{
+        if(response.data.code===0){
+          this.$router.push({path:'/login'})
+        }
+        else{
+          alert('error')
+        }
+      })
+    }
   }
 }
 </script>

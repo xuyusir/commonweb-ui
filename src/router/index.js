@@ -10,19 +10,24 @@ const routes = [
     component: () => import('@/views/login')
   },
   {
-    path: '/main',
+    path: '/',
     name: 'mainPage',
     component: () => import('@/views/main-page'),
     children:[
       { 
-        path: '/common/mainhome',
+        path: 'mainhome',
         name: 'mainHome',
         component: () => import('@/components/common/main-home')
       },
       { 
-        path: '/system/adduser',
+        path: 'system/adduser',
         name: 'addUser',
         component: () => import('@/components/user/add-user')
+      },
+      { 
+        path: 'system/userlist',
+        name: 'userList',
+        component: () => import('@/components/user/user-list')
       }
     ]
     

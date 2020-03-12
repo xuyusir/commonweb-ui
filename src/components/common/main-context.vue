@@ -13,7 +13,6 @@ export default {
 <style>
 .main-context{
   display: flex;
-  width: 100%;
 }
 
 </style>

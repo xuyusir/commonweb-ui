@@ -60,27 +60,26 @@ export default {
         password: [
           {required: true, trigger: 'change', message: 'password cant empty'}
         ],
-        code: [{required: true, trigger: 'change', message: 'verification code cant empty'}]
-      }
+        code: [{required: false, trigger: 'change', message: 'verification code cant empty'}]
+      },
     }
   },
   methods: {
     handleLogin () {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
-          this.axios.post('apis/login', {
+          this.axios.post('/apis/login', {
             username: this.loginForm.username,
             password: this.loginForm.password,
             rememberMe: this.loginForm.rememberMe,
             code: this.loginForm.code
           })
             .then(response => {
-              console.log(response)
               if (response.data.code === 0) {
                 //store注入当前userState
-                this.$store.dispatch("setUserState",response.data)
+                this.$store.dispatch("setUserState",response.data.data)
                 //跳转主页
-                this.$router.push('/common/mainhome')
+                this.$router.push('mainhome')
                 
               } else {
                 alert('username or password error')
@@ -88,11 +87,10 @@ export default {
             }
             )
         } else {
-          console.log('error submit!!')
           return false
         }
       })
-    }
+    },
   }
 
 }
