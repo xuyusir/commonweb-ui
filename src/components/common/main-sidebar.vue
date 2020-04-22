@@ -45,6 +45,6 @@ export default {
 .sidebar {
   flex-direction: column;
   width: 250px;
-  background-color: aqua;
+  background-color:lightgrey;
 }
 </style>

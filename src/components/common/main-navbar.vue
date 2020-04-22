@@ -34,17 +34,21 @@ export default {
     display: flex;
     height: 50px;
     justify-content: space-between;
+    align-items: center;
+    background-color: lightgreen;
 }
 h3{
-  margin: 0px;
+  text-align: center;
+  margin: 0;
   color:white;
+  
 }
 .head{
 
 }
 .logo{
   width: 250px;
-  background-color:green;
+  
 }
 
 </style>

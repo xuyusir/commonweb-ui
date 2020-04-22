@@ -13,6 +13,7 @@ export default {
 <style>
 .main-context{
   display: flex;
+  margin: 20px 20px;
 }
 
 </style>
